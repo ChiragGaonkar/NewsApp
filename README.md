@@ -3,5 +3,5 @@ Using Flutter & Firebase.
 Integrated with News API.
 Best tool to keep all individuals updated.
 
-![Demo1!](newsapp/assets/images/demo1.png)
-![Demo2!](newsapp/assets/images/demo2.png)
+![Demo1!](../assets/images/demo1.png)
+![Demo2!](../assets/images/demo2.png)
