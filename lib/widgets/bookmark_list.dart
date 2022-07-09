@@ -30,20 +30,20 @@ class BookMarkList extends StatelessWidget {
       child: Dismissible(
         key: UniqueKey(),
         background: Container(
-          color: Colors.red.withOpacity(0.1),
+          color: Theme.of(context).primaryColor.withOpacity(0.1),
           margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 12),
           padding: const EdgeInsets.all(20),
           alignment: Alignment.centerLeft,
           child: Row(
-            children: const [
+            children: [
               Icon(
                 Icons.delete,
-                color: Colors.red,
+                color: Theme.of(context).primaryColor,
               ),
-              SizedBox(width: 8),
+              const SizedBox(width: 8),
               Text(
                 "Delete",
-                style: TextStyle(color: Colors.red),
+                style: Theme.of(context).textTheme.headline4,
               ),
             ],
           ),
@@ -69,10 +69,12 @@ class BookMarkList extends StatelessWidget {
                 children: [
                   Text(
                     "Delete my Bookmark",
-                    style: Theme.of(context).textTheme.headline1,
+                    style: Theme.of(context).textTheme.headline4,
                   ),
-                  const Text(
-                      "Are you sure you want to delete the news you've bookmarked before?"),
+                  Text(
+                    "Are you sure you want to delete the news you've bookmarked before?",
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(40),
@@ -111,14 +113,14 @@ class BookMarkList extends StatelessWidget {
                       // if the text is in row/col use expanded to resolve text overflwing
                       child: Text(
                         title,
-                        style: Theme.of(context).textTheme.bodyText1,
+                        style: Theme.of(context).textTheme.subtitle1,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 4,
                       ),
                     ),
                     Text(
                       convertToAgo(DateTime.parse(publishedDate)),
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: Theme.of(context).textTheme.subtitle2,
                     ),
                   ],
                 ),

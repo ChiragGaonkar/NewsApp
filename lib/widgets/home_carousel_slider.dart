@@ -56,10 +56,10 @@ class HomeCarouselSlider extends StatelessWidget {
                     child: Container(
                       width: 300,
                       color: Colors.black54,
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(15),
                       child: Text(
                         title,
-                        style: TextStyle(fontSize: 20),
+                        style: Theme.of(context).textTheme.subtitle1,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -73,7 +73,7 @@ class HomeCarouselSlider extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         convertToAgo(DateTime.parse(publishedDate)),
-                        style: const TextStyle(fontSize: 12),
+                        style: Theme.of(context).textTheme.subtitle2,
                       ),
                     ),
                   )

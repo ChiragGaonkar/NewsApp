@@ -33,7 +33,7 @@ class ListNews extends StatelessWidget {
       },
       child: Card(
         color: const Color(0xFF303443),
-        margin: const EdgeInsets.all(5.0),
+        margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 8.0),
         child: Row(
           children: [
             Container(
@@ -59,7 +59,7 @@ class ListNews extends StatelessWidget {
                     // if the text is in row/col use expanded to resolve text overflwing
                     child: Text(
                       title,
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: Theme.of(context).textTheme.subtitle1,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 4,
                     ),
@@ -69,7 +69,7 @@ class ListNews extends StatelessWidget {
                   ),
                   Text(
                     convertToAgo(DateTime.parse(publishedDate)),
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.subtitle2,
                   ),
                 ],
               ),

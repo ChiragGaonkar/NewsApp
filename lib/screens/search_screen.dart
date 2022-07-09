@@ -65,11 +65,7 @@ class SearchScreen extends StatelessWidget {
                     fit: BoxFit.fitWidth,
                     child: Text(
                       categoryName,
-                      style: const TextStyle(
-                        // overflow: TextOverflow.ellipsis,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.subtitle1,
                     ),
                   ),
                 ],
@@ -112,10 +108,7 @@ class SearchScreen extends StatelessWidget {
               padding: const EdgeInsets.only(top: 70, left: 10, bottom: 5),
               child: Text(
                 "Search",
-                style: TextStyle(
-                  fontSize: 35,
-                  color: Theme.of(context).primaryColor,
-                ),
+                style: Theme.of(context).textTheme.headline1,
               ),
             ),
             const SizedBox(
@@ -131,7 +124,7 @@ class SearchScreen extends StatelessWidget {
                   filled: true,
                   fillColor: const Color(0xFF303443),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(15),
                     borderSide: BorderSide.none,
                   ),
                   hintText: "Find you favorite topic",
@@ -157,11 +150,11 @@ class SearchScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
                 "Top Categories",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headline3,
               ),
             ),
             Expanded(

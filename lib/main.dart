@@ -8,6 +8,7 @@ import 'package:newsapp/screens/news_in_detail_screen.dart';
 import 'package:newsapp/screens/search_screen.dart';
 import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,11 +24,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx) => BookMarkProvider()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'News App',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.grey,
-          primaryColor: Colors.grey,
+          primarySwatch: Colors.pink,
+          primaryColor: Colors.pink,
           accentColor: Colors.white,
           brightness: Brightness.dark,
           fontFamily: 'Comfortaa',
@@ -35,13 +36,28 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light().textTheme.copyWith(
                 bodyText1: const TextStyle(color: Colors.white, fontSize: 16),
                 bodyText2: const TextStyle(color: Colors.white, fontSize: 18),
-                subtitle1: const TextStyle(color: Colors.white, fontSize: 13),
+                subtitle1: const TextStyle(color: Colors.white, fontSize: 15),
+                subtitle2: const TextStyle(color: Colors.white, fontSize: 12),
                 headline1: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 20,
+                  color: Colors.pink,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
-                //style: Theme.of(context).textTheme.bodyText1
+                headline2: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                ),
+                headline3: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                headline4: const TextStyle(
+                  color: Colors.pink,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+                // style: Theme.of(context).textTheme.bodyText1
               ),
         ),
         home: HomePage(),

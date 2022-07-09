@@ -32,10 +32,7 @@ class BookmarkScreen extends StatelessWidget {
                         const EdgeInsets.only(top: 70, left: 10, bottom: 5),
                     child: Text(
                       "Bookmark",
-                      style: TextStyle(
-                        fontSize: 35,
-                        color: Theme.of(context).primaryColor,
-                      ),
+                      style: Theme.of(context).textTheme.headline1,
                     ),
                   ),
                   const SizedBox(

@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       body: Container(
-        decoration: customcgradientolor(Colors.white, Colors.black),
+        decoration: customcgradientolor(Colors.grey, Colors.black),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -78,28 +78,22 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     greet,
-                    style: TextStyle(
-                      fontSize: 35,
-                      color: Theme.of(context).primaryColor,
-                    ),
+                    style: Theme.of(context).textTheme.headline1,
                   ),
                   Text(
                     DateFormat.yMMMEd().format(now).toString(),
-                    style: const TextStyle(fontSize: 17),
+                    style: Theme.of(context).textTheme.headline2,
                   ),
                 ],
               ),
             ),
             news.allNews('general').isEmpty
                 ? Container()
-                : const Padding(
-                    padding: EdgeInsets.all(10),
+                : Padding(
+                    padding: const EdgeInsets.all(10),
                     child: Text(
                       "Glance",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                   ),
             _isLoading1
@@ -113,12 +107,12 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             news.allNews('general').isEmpty
                 ? Container()
-                : const Padding(
-                    padding: EdgeInsets.only(left: 10, top: 10, bottom: 10),
+                : Padding(
+                    padding:
+                        const EdgeInsets.only(left: 10, top: 10, bottom: 10),
                     child: Text(
                       "Latest News",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                   ),
             _isLoading2

@@ -33,13 +33,16 @@ class _DetailedNewsState extends State<DetailedNews> {
           children: [
             Text(
               heading,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: Theme.of(context).textTheme.headline3,
             ),
             Divider(
               color: Theme.of(context).primaryColor,
               thickness: 2,
             ),
-            Text(data),
+            Text(
+              data,
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
           ],
         ),
       );
@@ -67,13 +70,13 @@ class _DetailedNewsState extends State<DetailedNews> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   publishedTime,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.subtitle2,
                 ),
                 IconButton(
                   onPressed: () {
@@ -108,7 +111,7 @@ class _DetailedNewsState extends State<DetailedNews> {
                     width: size / 1.2,
                     child: Text(
                       widget.detailedNews.title.toString(),
-                      style: Theme.of(context).textTheme.headline1,
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                   ),
                 ],
@@ -130,6 +133,8 @@ class _DetailedNewsState extends State<DetailedNews> {
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          minimumSize: const Size.fromHeight(40)),
                       onPressed: () async {
                         String url = widget.detailedNews.url.toString();
                         //var urlLauchable = await canLaunchUrl(Uri.parse(url));
@@ -140,11 +145,11 @@ class _DetailedNewsState extends State<DetailedNews> {
                           throw 'Could not launch $url';
                         }
                       },
-                      child: const Padding(
-                        padding: EdgeInsets.only(right: 30, left: 30),
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 30, left: 30),
                         child: Text(
                           "View full article",
-                          style: TextStyle(fontSize: 17),
+                          style: Theme.of(context).textTheme.headline2,
                         ),
                       ),
                     ),
